@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO Executive Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>📊 CEO Dash</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="#dashboard" class="nav-item active" onclick="showSection('dashboard')">
+                <span class="icon">📈</span> Dashboard
+            </a>
+            <a href="#metrics" class="nav-item" onclick="showSection('metrics')">
+                <span class="icon">📋</span> Metrics
+            </a>
+            <a href="#team" class="nav-item" onclick="showSection('team')">
+                <span class="icon">👥</span> Team
+            </a>
+            <a href="#projects" class="nav-item" onclick="showSection('projects')">
+                <span class="icon">🎯</span> Projects
+            </a>
+            <a href="#analytics" class="nav-item" onclick="showSection('analytics')">
+                <span class="icon">📊</span> Analytics
+            </a>
+            <a href="#reports" class="nav-item" onclick="showSection('reports')">
+                <span class="icon">📄</span> Reports
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">CEO</div>
+                <div class="user-info">
+                    <p class="user-name">John Doe</p>
+                    <p class="user-role">Chief Executive Officer</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <h2 id="page-title">Executive Dashboard</h2>
+            </div>
+            <div class="header-right">
+                <input type="text" class="search-box" placeholder="Search...">
+                <button class="notification-btn">🔔 <span class="badge">3</span></button>
+                <button class="settings-btn">⚙️</button>
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="dashboard-grid">
+                <!-- KPI Cards -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Revenue</h3>
+                        <span class="badge-success">+12.5%</span>
+                    </div>
+                    <p class="kpi-value">$2.5M</p>
+                    <p class="kpi-label">This Quarter</p>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Growth</h3>
+                        <span class="badge-success">+8.3%</span>
+                    </div>
+                    <p class="kpi-value">$450K</p>
+                    <p class="kpi-label">Month over Month</p>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Customers</h3>
+                        <span class="badge-warning">+5.2%</span>
+                    </div>
+                    <p class="kpi-value">8,234</p>
+                    <p class="kpi-label">Active Users</p>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Conversion Rate</h3>
+                        <span class="badge-danger">-2.1%</span>
+                    </div>
+                    <p class="kpi-value">3.45%</p>
+                    <p class="kpi-label">Last 30 days</p>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <h3>Revenue Trend</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Market Share</h3>
+                    <div class="pie-chart">
+                        <div class="pie-segment segment-1" style="--value: 35%;">35%</div>
+                        <div class="pie-segment segment-2" style="--value: 28%;">28%</div>
+                        <div class="pie-segment segment-3" style="--value: 22%;">22%</div>
+                        <div class="pie-segment segment-4" style="--value: 15%;">15%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <span class="activity-icon">📈</span>
+                        <div class="activity-content">
+                            <p class="activity-title">Q4 Earnings Report Published</p>
+                            <p class="activity-time">2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">👥</span>
+                        <div class="activity-content">
+                            <p class="activity-title">New team member onboarded</p>
+                            <p class="activity-time">5 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🎯</span>
+                        <div class="activity-content">
+                            <p class="activity-title">Q1 Strategic Goals Approved</p>
+                            <p class="activity-time">1 day ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">💼</span>
+                        <div class="activity-content">
+                            <p class="activity-title">Board Meeting Scheduled</p>
+                            <p class="activity-time">2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Section -->
+        <section id="metrics" class="content-section">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h4>Employee Productivity</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                    <p>85% Target Met</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Customer Satisfaction</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 92%;"></div>
+                    </div>
+                    <p>92% Rating</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Project Completion</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 78%;"></div>
+                    </div>
+                    <p>78% On Schedule</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Budget Utilization</h4>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                    <p>65% Allocated</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="content-section">
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">COO</div>
+                    <h4>Chief Operations Officer</h4>
+                    <p>Sarah Johnson</p>
+                    <button class="contact-btn">📧 Contact</button>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CFO</div>
+                    <h4>Chief Financial Officer</h4>
+                    <p>Michael Chen</p>
+                    <button class="contact-btn">📧 Contact</button>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CTO</div>
+                    <h4>Chief Technology Officer</h4>
+                    <p>Emma Williams</p>
+                    <button class="contact-btn">📧 Contact</button>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CMO</div>
+                    <h4>Chief Marketing Officer</h4>
+                    <p>David Rodriguez</p>
+                    <button class="contact-btn">📧 Contact</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+            <div class="projects-list">
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>Digital Transformation Initiative</h4>
+                        <span class="status-badge status-active">In Progress</span>
+                    </div>
+                    <p>Cloud migration and modernization of core systems</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                    <p class="progress-text">65% Complete</p>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>Market Expansion - Asia Pacific</h4>
+                        <span class="status-badge status-planning">Planning</span>
+                    </div>
+                    <p>Entering new markets in Southeast Asia</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%;"></div>
+                    </div>
+                    <p class="progress-text">30% Complete</p>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>AI & Machine Learning Integration</h4>
+                        <span class="status-badge status-active">In Progress</span>
+                    </div>
+                    <p>Implementing AI solutions for customer service</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
+                    <p class="progress-text">50% Complete</p>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>Sustainability Program</h4>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p>Carbon neutral operations by 2025</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                    <p class="progress-text">100% Complete</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="content-section">
+            <div class="analytics-container">
+                <div class="analytics-card">
+                    <h3>Traffic Sources</h3>
+                    <div class="traffic-chart">
+                        <div class="traffic-bar">
+                            <div class="label">Organic</div>
+                            <div class="bar" style="width: 45%;"></div>
+                            <div class="value">45%</div>
+                        </div>
+                        <div class="traffic-bar">
+                            <div class="label">Direct</div>
+                            <div class="bar" style="width: 30%;"></div>
+                            <div class="value">30%</div>
+                        </div>
+                        <div class="traffic-bar">
+                            <div class="label">Social</div>
+                            <div class="bar" style="width: 15%;">
+                            </div>
+                            <div class="value">15%</div>
+                        </div>
+                        <div class="traffic-bar">
+                            <div class="label">Referral</div>
+                            <div class="bar" style="width: 10%;"></div>
+                            <div class="value">10%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <h3>User Demographics</h3>
+                    <div class="demographics">
+                        <div class="demo-item">
+                            <span>18-24</span>
+                            <span>12%</span>
+                        </div>
+                        <div class="demo-item">
+                            <span>25-34</span>
+                            <span>28%</span>
+                        </div>
+                        <div class="demo-item">
+                            <span>35-44</span>
+                            <span>35%</span>
+                        </div>
+                        <div class="demo-item">
+                            <span>45+</span>
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="content-section">
+            <div class="reports-list">
+                <div class="report-item">
+                    <div class="report-icon">📊</div>
+                    <div class="report-content">
+                        <h4>Q4 Financial Report</h4>
+                        <p>Comprehensive financial analysis and projections</p>
+                    </div>
+                    <button class="download-btn">⬇️ Download</button>
+                </div>
+
+                <div class="report-item">
+                    <div class="report-icon">📈</div>
+                    <div class="report-content">
+                        <h4>Market Performance Analysis</h4>
+                        <p>Detailed market insights and competitive analysis</p>
+                    </div>
+                    <button class="download-btn">⬇️ Download</button>
+                </div>
+
+                <div class="report-item">
+                    <div class="report-icon">👥</div>
+                    <div class="report-content">
+                        <h4>HR & Workforce Summary</h4>
+                        <p>Employee metrics and organizational overview</p>
+                    </div>
+                    <button class="download-btn">⬇️ Download</button>
+                </div>
+
+                <div class="report-item">
+                    <div class="report-icon">🌍</div>
+                    <div class="report-content">
+                        <h4>ESG & Sustainability Report</h4>
+                        <p>Environmental and social responsibility update</p>
+                    </div>
+                    <button class="download-btn">⬇️ Download</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
